@@ -28,10 +28,6 @@ Next Steps:
 ./demo: ELF 64-bit LSB executable, ARM aarch64, version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-aarch64.so.1, BuildID[sha1]=f69d4523e1178e66252f08c7d1b39e02eb3b40b2, for GNU/Linux 3.7.0, not stripped
 ```
 
---> dynamically linked - changed to statically linked 
-docker pull ghcr.io/graalvm/native-image-community:22.0.1-muslib-ol8-20240416
-
-
 --> Try with `Target` not `Target1`
 
 --> Try removing main
