@@ -2,7 +2,8 @@
 #FROM ghcr.io/graalvm/native-image-community:22              # Works - dynmically linked
 
 # MusLib doesn't work
-#FROM ghcr.io/graalvm/native-image-community:22.0.1-muslib-ol9-20240416 # LATEST
+# LATEST
+FROM ghcr.io/graalvm/native-image-community:22.0.1-muslib-ol9-20240416
 #FROM ghcr.io/graalvm/native-image-community:22-muslib-ol8              # Oracle Linux 8
 #FROM ghcr.io/graalvm/native-image-community:17-muslib                  # Java 17
 
