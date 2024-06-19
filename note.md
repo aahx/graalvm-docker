@@ -43,6 +43,10 @@ Story:
 
 ```
 
+# 2. ---> Change to Alex
+https://hub.docker.com/r/alexjarvisrws/graalvm-native-image-builder/tags
+`FROM alexjarvisrws/graalvm-native-image-builder:0.0.2`
+
 
 
 
