@@ -47,8 +47,10 @@ Story:
 
 
 # Step 1: Build the Docker image
-<s>`docker build -t test1 .`</s>
-`docker buildx build --platform linux/amd64 -t test1 .`
+
+docker build -t test1 .
+
+docker buildx build --platform linux/amd64 -t test1 .
 
 # Step 2: Check if was created / start an interactive bash shell
 docker run -it --entrypoint /bin/bash test1
