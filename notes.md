@@ -11,6 +11,9 @@ ls -l target
 ### (Optional) Step 3: Create the target directory on your local machine
 mkdir -p /Users/michaelkim/Desktop/demo/target1
 
+// mounted target directory
+
+
 ### Step 4: Create a temporary Docker container from the built image
 docker create --name temp-container test1
 --> (haven't tried) docker create your-image-name:latest /bin/bash
@@ -63,7 +66,7 @@ Attempted: +
 
 Asking the community:
 - https://github.com/oracle/graal/issues/9142
-- https://stackoverflow.com/questions/78640397/issuing-building-static-linked-executables-with-graalvm-docker-community-image
+- `https://stackoverflow.com/questions/78640397/issuing-building-static-linked-executables-with-graalvm-docker-community-image`
 
 ---
 
@@ -78,5 +81,9 @@ Asking the community:
 yes
 
 ### 4 --> Try removing main
+yes
+
 ### 5 --> Try adding Spring Boot
+yes
+
 ### 6 --> Change Pom File to Execute on Maven Package phase

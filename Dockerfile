@@ -28,10 +28,34 @@
 
 
 ## WORKS
-#FROM ghcr.io/graalvm/native-image-community:22
+FROM ghcr.io/graalvm/native-image-community:22
+RUN microdnf install -y gzip tar && microdnf clean all
+WORKDIR /app
+COPY . .
+RUN ./mvnw clean package
+
+
+#ARG RESULT_LIB="/musl"
 #
-#RUN microdnf install -y gzip tar && microdnf clean all
-#WORKDIR /app
+#RUN #mkdir ${RESULT_LIB} && \
+
+#    curl -L -o musl.tar.gz https://more.musl.cc/10.2.1/x86_64-linux-musl/x86_64-linux-musl-native.tgz && \
+#    tar -xvzf musl.tar.gz -C /musl --strip-components 1 && \
+
+
+#    cp /usr/lib/gcc/x86_64-redhat-linux/8/libstdc++.a ${RESULT_LIB}/lib/
+#
+#ENV CC=/musl/bin/gcc
+#
+#RUN curl -L -o zlib.tar.gz https://zlib.net/zlib-1.2.11.tar.gz && \
+#    mkdir zlib && tar -xvzf zlib.tar.gz -C zlib --strip-components 1 && \
+#    cd zlib && ./configure --static --prefix=/musl && \
+#    make && make install && \
+#    cd / && rm -rf /zlib && rm -f /zlib.tar.gz
+#
+#ENV PATH="$PATH:/musl/bin"
+
+
 #COPY . .
 #RUN ./mvnw clean package
 #
@@ -42,6 +66,15 @@
 ## --
 
 
+#FROM alexjarvisrws/graalvm-native-image-builder:0.0.2
+#
+#WORKDIR /app
+#COPY . .
+#
+#ENV JAR_FILE=/app/target/demo-0.0.1-SNAPSHOT.jar
+#ENV OUTPUT_NAME=demo
+#
+#RUN ./mvnw clean package
 
 
 
