@@ -1,7 +1,7 @@
-FROM ghcr.io/graalvm/native-image-community:21.0.2-ol9-20240116
-WORKDIR /app
-COPY . .
-RUN ./mvnw clean package
+#FROM ghcr.io/graalvm/native-image-community:21.0.2-ol9-20240116
+#WORKDIR /app
+#COPY . .
+#RUN ./mvnw clean package
 
 
 # docker build -t test2 .
@@ -23,3 +23,10 @@ RUN ./mvnw clean package
 
 # docker ps -a
 # docker cp [containerId]:/app/target/demo /Users/michaelkim/Desktop/demo/target
+
+#<!--  <parent>-->
+ #<!--    <groupId>org.springframework.boot</groupId>-->
+ #<!--    <artifactId>spring-boot-starter-parent</artifactId>-->
+ #<!--    <version>3.3.0</version>-->
+ #<!--    <relativePath/>-->
+ #<!--  </parent>-->
