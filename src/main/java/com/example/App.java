@@ -6,5 +6,4 @@ public class App {
 		String str = "Native Image is awesome";
 		System.out.println(str);
 	}
-
 }
