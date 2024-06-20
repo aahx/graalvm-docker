@@ -75,7 +75,7 @@
 <!--            <image>-->
 <!--              <name>${docker.image.prefix}/native-image-community:22</name>-->
 <!--              <build>-->
-<!--                <dockerFile>Dockerfile</dockerFile>-->
+<!--                <dockerFile>dockerfile.md</dockerFile>-->
 <!--                <contextDir>${project.basedir}</contextDir>-->
 <!--                <tags>-->
 <!--                  <tag>latest</tag>-->

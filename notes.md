@@ -1,10 +1,10 @@
 ### Step 1: Build the Docker image
 docker build -t test1 .
-docker buildx build --platform linux/amd64 -t test1 .
+docker buildx build --platform linux/amd64 -t test2 .
 
 ### Step 2: Check if was created / start an interactive bash shell
 docker run -it --entrypoint /bin/bash test1
-docker run -it --platform linux/amd64 --entrypoint /bin/bash test1
+docker run -it --platform linux/amd64 --entrypoint /bin/bash test2
 ls -l
 ls -l target
 
