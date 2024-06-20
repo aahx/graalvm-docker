@@ -7,6 +7,10 @@
    4.2 Execute the native-image command inside the container, referencing the JAR file from the mounted directory.
    4.3 Output the native executable to the mounted host directory.
 
+NAMES NOT FREAKING WORKING
+outputting as `native-image`
+
+
 
 
 1. Build the JAR file using Maven (mvn package).

@@ -53,30 +53,46 @@
             <goals>
               <goal>exec</goal>
             </goals>
+            <configuration>
+              <executable>docker</executable>
+              <arguments>
+                <argument>run</argument>
+                <argument>--rm</argument>
+                <argument>-v</argument>
+                <argument>${project.build.directory}:/app</argument>
+                <argument>ghcr.io/graalvm/native-image-community:21.0.2-ol9-20240116</argument>
+
+                <argument>native-image</argument>
+                <argument>--no-fallback</argument>
+                <argument>--report-unsupported-elements-at-runtime</argument>
+                <argument>--static</argument>
+                <argument>-jar</argument>
+                <argument>/app/${project.artifactId}-${project.version}.jar</argument>
+                <!-- -o Flag not working as intended??? -->
+                <argument>-o</argument>
+                <argument>/app/${project.artifactId}</argument>
+              </arguments>
+            </configuration>
+          </execution>
+          <!-- included section execution to change file name-->
+          <execution>
+            <id>rename-native-image</id>
+            <phase>package</phase>
+            <goals>
+              <goal>exec</goal>
+            </goals>
+            <configuration>
+              <executable>mv</executable>
+              <arguments>
+                <argument>${project.build.directory}/native-image</argument>
+                <argument>${project.build.directory}/${project.artifactId}</argument>
+              </arguments>
+            </configuration>
           </execution>
         </executions>
-        <configuration>
-          <executable>docker</executable>
-          <arguments>
-            <argument>run</argument>
-            <argument>--rm</argument>
-            <argument>-v</argument>
-            <argument>${project.build.directory}:/target</argument>
-            <argument>ghcr.io/graalvm/native-image-community:21.0.2-ol9-20240116</argument>
-            <argument>native-image</argument>
-            <argument>-jar</argument>
-            <argument>/target/${project.artifactId}-${project.version}.jar</argument>
-            <argument>-o</argument>
-            <argument>/target/${project.artifactId}</argument>
-          </arguments>
-        </configuration>
       </plugin>
-
-
     </plugins>
   </build>
-
-
 
 
 </project>
