@@ -36,66 +36,6 @@
           </archive>
         </configuration>
       </plugin>
-<!--      <plugin>-->
-<!--        <groupId>org.graalvm.buildtools</groupId>-->
-<!--        <artifactId>native-maven-plugin</artifactId>-->
-<!--        <version>0.10.2</version>-->
-<!--        <extensions>true</extensions>-->
-<!--        <executions>-->
-<!--          <execution>-->
-<!--            <id>build-native</id>-->
-<!--            <goals>-->
-<!--              <goal>compile-no-fork</goal>-->
-<!--            </goals>-->
-<!--            <phase>package</phase>-->
-<!--          </execution>-->
-<!--          <execution>-->
-<!--            <id>test-native</id>-->
-<!--            <goals>-->
-<!--              <goal>test</goal>-->
-<!--            </goals>-->
-<!--            <phase>test</phase>-->
-<!--          </execution>-->
-<!--        </executions>-->
-<!--      </plugin>-->
-<!--      <plugin>-->
-<!--        <groupId>io.fabric8</groupId>-->
-<!--        <artifactId>docker-maven-plugin</artifactId>-->
-<!--        <version>0.43.0</version>-->
-<!--        <executions>-->
-<!--          <execution>-->
-<!--            <id>default</id>-->
-<!--            <goals>-->
-<!--              <goal>build</goal>-->
-<!--            </goals>-->
-<!--          </execution>-->
-<!--        </executions>-->
-<!--        <configuration>-->
-<!--          <images>-->
-<!--            <image>-->
-<!--              <name>${docker.image.prefix}/native-image-community:22</name>-->
-<!--              <build>-->
-<!--                <dockerFile>dockerfile.md</dockerFile>-->
-<!--                <contextDir>${project.basedir}</contextDir>-->
-<!--                <tags>-->
-<!--                  <tag>latest</tag>-->
-<!--                </tags>-->
-<!--              </build>-->
-<!--              <run>-->
-<!--                <args>-->
-<!--                  <arg>native-image</arg>-->
-<!--                  <arg>-jar</arg>-->
-<!--                  <arg>/workspace/target/demo-0.0.1-SNAPSHOT.jar</arg>-->
-<!--                  <arg>/workspace/target/demo</arg>-->
-<!--                </args>-->
-<!--                <wait>-->
-<!--                  <log>Image built successfully</log>-->
-<!--                </wait>-->
-<!--              </run>-->
-<!--            </image>-->
-<!--          </images>-->
-<!--        </configuration>-->
-<!--      </plugin>-->
     </plugins>
   </build>
 
