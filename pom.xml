@@ -65,16 +65,19 @@
                 <argument>native-image</argument>
                 <argument>--no-fallback</argument>
                 <argument>--report-unsupported-elements-at-runtime</argument>
+<!--                <argument>-march=compatability</argument>-->
+                <!-- m-h need to add for lambda-->
+                <argument>--enable-url-protocols=http</argument>
                 <argument>--static</argument>
                 <argument>-jar</argument>
                 <argument>/app/${project.artifactId}-${project.version}.jar</argument>
-                <!-- -o Flag not working as intended??? -->
+                <!-- -m -o Flag not working as intended??? -->
                 <argument>-o</argument>
                 <argument>/app/${project.artifactId}</argument>
               </arguments>
             </configuration>
           </execution>
-          <!-- included section execution to change file name-->
+          <!-- -m included section execution to change file name-->
           <execution>
             <id>rename-native-image</id>
             <phase>package</phase>
